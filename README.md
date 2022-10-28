@@ -4,6 +4,7 @@ This is a server that stores information about the national football team player
 This server enables signed up/in users to upload information about the players that belong to the national team
 
 ENV Requirement
+
  -MONGO_URI
  
  -JWT_SECRET
