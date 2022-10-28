@@ -6,6 +6,8 @@ const connectDB = require('./db/connect')
 const errorHandler = require('./middleware/error-handler')
 const notFound = require('./middleware/not-found')
 const userAuthRouter = require('./routes/user-auth')
+const AuthenticateUser = require('./middleware/user-authorization')
+const playerRouter = require('./routes/players')
 
 // Package usage
 app.use(express.json());
@@ -15,6 +17,7 @@ app.get('/', (req, res) => {
 
 //routes
 app.use('/api/v1/user-auth', userAuthRouter)
+app.use('/api/v1/players', AuthenticateUser, playerRouter)
 
 
 //error Handlers
